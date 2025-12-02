@@ -38,3 +38,11 @@ docs/tasks.md에 작성해줘.
 
 @docs/PRD.md와 @README.md 그리고 https://realworld-docs.netlify.app/introduction/ 을 참고해서 디자인 문서를 생성해줘.
 디자인 문서에서 다이아그램이 필요한 경우는 mermaid를 사용해줘.
+
+@docs/tasks.md의 내용들을 github issue에 등록해줘.
+이슈에는 작업 배경, 작업 내용, 참고해야할 문서, 인수조건(AC)이 포함 되어야 해. 
+
+// 규칙을 정비합니다. => /init
+
+/commit
+
