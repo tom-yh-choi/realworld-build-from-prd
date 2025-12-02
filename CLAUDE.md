@@ -107,6 +107,7 @@ Authorization: Token jwt.token.here
 - Each commit should represent a completed unit of work
 - After each commit, verify that the work meets the acceptance criteria
 - Add a comment to the related GitHub issue confirming which acceptance criteria have been satisfied
+- **IMPORTANT**: Do NOT close issues automatically. Issues should only be closed manually by the user after review.
 - Comment format:
   ```
   ✅ AC verified by commit [commit-hash]:
