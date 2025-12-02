@@ -356,19 +356,33 @@ Authorization: Token jwt.token.here
 
 > 기술 스택 선정은 [Agentic Coding](http://lucumr.pocoo.org/2025/6/12/agentic-coding/) 권장사항을 기반으로 합니다.
 
-### 7.1 프론트엔드
+### 7.1 런타임 환경
 
-| 영역 | 기술 | 비고 |
-|------|------|------|
-| 언어 | TypeScript | 타입 안전성 |
-| UI 라이브러리 | React | 함수형 컴포넌트 |
-| 빌드 도구 | Vite | 빠른 개발 서버 |
-| UI 컴포넌트 | shadcn/ui | 재사용 가능한 컴포넌트 |
-| 스타일링 | Tailwind CSS | 유틸리티 기반 |
-| 라우팅 | TanStack Router | Hash 기반 (`/#/`) |
-| 서버 상태 | TanStack Query | 캐싱 및 동기화 |
-| 클라이언트 상태 | Zustand | 경량 상태 관리 |
-| Markdown | react-markdown | 게시글 렌더링 |
+| 영역 | 기술 | 버전 | 공식 문서 |
+|------|------|------|----------|
+| Node.js | Node.js LTS | v24.x (Krypton) | https://nodejs.org/docs/latest-v24.x/api/ |
+| Go | Go | 1.25.x | https://go.dev/doc/go1.25 |
+
+### 7.2 프론트엔드
+
+| 영역 | 기술 | 버전 | 공식 문서 |
+|------|------|------|----------|
+| 언어 | TypeScript | 5.9.x | https://www.typescriptlang.org/docs/ |
+| UI 라이브러리 | React | 19.x | https://react.dev/ |
+| 빌드 도구 | Vite | 7.x | https://vite.dev/guide/ |
+| UI 컴포넌트 | shadcn/ui | 3.5.x | https://ui.shadcn.com/docs |
+| 스타일링 | Tailwind CSS | 4.x | https://tailwindcss.com/docs |
+| 라우팅 | TanStack Router | 1.x | https://tanstack.com/router/latest/docs/framework/react/overview |
+| 서버 상태 | TanStack Query | 5.x | https://tanstack.com/query/latest/docs/framework/react/overview |
+| 클라이언트 상태 | Zustand | 5.x | https://zustand.docs.pmnd.rs/getting-started/introduction |
+| Markdown | react-markdown | 10.x | https://github.com/remarkjs/react-markdown |
+
+**초기 설정 가이드**:
+- **Vite + React + TypeScript**: https://vite.dev/guide/#scaffolding-your-first-vite-project
+- **Tailwind CSS v4 설치**: https://tailwindcss.com/docs/installation/vite
+- **shadcn/ui 설치**: https://ui.shadcn.com/docs/installation/vite
+- **TanStack Router 설정**: https://tanstack.com/router/latest/docs/framework/react/quick-start
+- **TanStack Query 설정**: https://tanstack.com/query/latest/docs/framework/react/quick-start
 
 **요구사항**:
 - Hash 기반 라우팅 (`/#/`)
@@ -376,16 +390,22 @@ Authorization: Token jwt.token.here
 - Markdown 렌더링 지원
 - 반응형 디자인
 
-### 7.2 백엔드
+### 7.3 백엔드
 
-| 영역 | 기술 | 비고 |
-|------|------|------|
-| 언어 | Go | 명시적 Context, 빠른 테스트 |
-| HTTP 라우터 | Chi 또는 표준 라이브러리 | 단순함 우선 |
-| 데이터베이스 | SQLite | 단일 파일 DB |
-| SQL | 직접 SQL 사용 (sqlc 권장) | ORM 미사용 |
-| 인증 | golang-jwt | JWT 토큰 생성/검증 |
-| 비밀번호 | bcrypt | 해싱 |
+| 영역 | 기술 | 버전 | 공식 문서 |
+|------|------|------|----------|
+| 언어 | Go | 1.25.x | https://go.dev/doc/ |
+| HTTP 라우터 | Chi | v5.2.x | https://go-chi.io/#/README |
+| 데이터베이스 | SQLite | 3.x | https://www.sqlite.org/docs.html |
+| SQL 코드 생성 | sqlc | 1.30.x | https://docs.sqlc.dev/en/stable/ |
+| 인증 | golang-jwt | v5.3.x | https://golang-jwt.github.io/jwt/usage/create/ |
+| 비밀번호 | bcrypt | golang.org/x/crypto | https://pkg.go.dev/golang.org/x/crypto/bcrypt |
+
+**초기 설정 가이드**:
+- **Go 모듈 초기화**: https://go.dev/doc/tutorial/create-module
+- **Chi 라우터 시작**: https://go-chi.io/#/README?id=examples
+- **sqlc 시작하기**: https://docs.sqlc.dev/en/stable/tutorials/getting-started-sqlite.html
+- **JWT 인증 구현**: https://golang-jwt.github.io/jwt/usage/create/
 
 **요구사항**:
 - RESTful API
@@ -393,18 +413,22 @@ Authorization: Token jwt.token.here
 - CORS 설정
 - 일관된 에러 응답 형식
 
-### 7.3 개발 환경
+### 7.4 개발 환경
 
-| 영역 | 도구 | 비고 |
-|------|------|------|
-| 실행 환경 | Docker | 컨테이너 기반 배포 |
-| 오케스트레이션 | Docker Compose | 프론트엔드 + 백엔드 통합 |
-| 빌드/실행 | Makefile | `make dev`, `make build`, `make test` |
-| 로깅 | 파일 기반 로깅 | 디버깅용 |
-| 백엔드 테스트 | Go 표준 테스트 | `go test ./...` |
-| E2E 테스트 | Playwright | 브라우저 자동화 |
+| 영역 | 도구 | 버전 | 공식 문서 |
+|------|------|------|----------|
+| 컨테이너 | Docker Engine | 29.x | https://docs.docker.com/engine/ |
+| 오케스트레이션 | Docker Compose | 2.40.x | https://docs.docker.com/compose/ |
+| 빌드/실행 | Makefile | - | https://www.gnu.org/software/make/manual/ |
+| E2E 테스트 | Playwright | 1.57.x | https://playwright.dev/docs/intro |
+| 백엔드 테스트 | Go 표준 테스트 | - | https://go.dev/doc/tutorial/add-a-test |
 
-### 7.4 보안
+**초기 설정 가이드**:
+- **Docker 설치**: https://docs.docker.com/engine/install/
+- **Docker Compose 시작**: https://docs.docker.com/compose/gettingstarted/
+- **Playwright 설치**: https://playwright.dev/docs/intro#installing-playwright
+
+### 7.5 보안
 
 - **Password 해싱**: bcrypt 사용
 - **JWT 토큰 기반 인증**: 만료 시간 설정
