@@ -58,3 +58,66 @@ Github issue #4에 git hook을 사용해서 lint, build, test 가 pre commit 시
 위 내용은 영문으로 작성해서 추가해줘.
 
 /commit
+
+// PRD.md 문서에 최신 버전 명시 및 설정 퍼플렉시티 MCP 사용
+mcp 설정하는
+
+
+vi ~/.claude/settings.json => ~/.claude.json
+
+claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
+
+
+context7, github, perplexity-ask, puppeteer
+
+
+"mcpServers": {
+  "context7": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@upstash/context7-mcp"
+    ],
+    "env": {}
+  },
+  "github": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-github"
+    ],
+    "env": {}
+  },
+  "perplexity-ask": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "server-perplexity-ask"
+    ],
+    "env": {}
+  },
+  "puppeteer": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-puppeteer"
+    ],
+    "env": {}
+  }
+},
+
+claude-yolo --mcp-config ~/.claude.json
+
+@docs/PRD.md의 기술 스택에 버전 정보를 명시해줘. 사용할 버전은 LTS의 최신버전을 사용하고
+해당 버전의 초기 설정 작업에 사용할 공식문서 URL도 추가해줘.
+버전 및 공식 문서에 대한 조사는 퍼플렉시티 mcp를 사용해서 진행해줘.
+
+/commit
+
+github issue의 관련 티켓에도 버전과 참고할 문서들의 URL을 업데이트해줘.
+
+@CLAUDE.md 에 github 관련 작업은 cli를 사용하도록 명시적으로 적어줘.
