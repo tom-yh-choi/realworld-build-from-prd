@@ -78,3 +78,38 @@ Authorization: Token jwt.token.here
 - [PRD](docs/PRD.md) - 제품 요구사항
 - [설계 문서](docs/DESIGN.md) - 아키텍처, ERD, API 명세
 - [작업 목록](docs/tasks.md) - 구현 체크리스트
+
+## Development Guidelines
+
+### Test-Driven Development (TDD)
+
+- Backend and core logic MUST be implemented using TDD approach
+- Write tests first, then implement the code to pass the tests
+- Follow the Red-Green-Refactor cycle:
+  1. **Red**: Write a failing test
+  2. **Green**: Write minimal code to pass the test
+  3. **Refactor**: Improve the code while keeping tests green
+
+### SOLID Principles & Clean Architecture
+
+- Apply SOLID principles throughout the codebase:
+  - **S**ingle Responsibility: Each module/class should have one reason to change
+  - **O**pen/Closed: Open for extension, closed for modification
+  - **L**iskov Substitution: Subtypes must be substitutable for their base types
+  - **I**nterface Segregation: Prefer small, specific interfaces
+  - **D**ependency Inversion: Depend on abstractions, not concretions
+- Follow Clean Architecture layers:
+  - Entities (domain models) → Use Cases (business logic) → Interface Adapters (handlers, repositories) → Frameworks (DB, HTTP)
+- Dependencies should point inward (from frameworks to entities)
+
+### Commit & Issue Tracking
+
+- Each commit should represent a completed unit of work
+- After each commit, verify that the work meets the acceptance criteria
+- Add a comment to the related GitHub issue confirming which acceptance criteria have been satisfied
+- Comment format:
+  ```
+  ✅ AC verified by commit [commit-hash]:
+  - [x] Acceptance criteria item 1
+  - [x] Acceptance criteria item 2
+  ```
