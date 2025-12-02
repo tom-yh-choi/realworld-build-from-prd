@@ -1,0 +1,30 @@
+요건정의(PRD) => 설계(Design) => 태스크 분할(Tasks) => TDD기반 구현
+
+
+나는 지금부터 바이브 코딩을 학습하기 위한 리얼월드 앱 구현 프로젝트를 진행하려고 해.
+우선 공식문서(https://realworld-docs.netlify.app/introduction/)로부터 리얼월드 앱의 PRD 문서를 생성해줘.
+문서는 docs폴더 아래에 넣어줘.
+
+PRD에 기술 스택을 업데이트해줘.
+사용할 기술 스택은 http://lucumr.pocoo.org/2025/6/12/agentic-coding/ 의 권장사항에 기반해서 결정해줘.
+
+데이터베이스는 sqlite만을 사용해줘.
+CSS는 shadcn + tailwindcss를 사용해줘.
+프론트 상태관리 라이브러리는 Zustand를 사용해줘.
+실행환경은 도커 컨테이너를 사용해줘.
+
+PRD 문서에 언급된 bootstrap 부분은 새로 적용된 css로 변경해줘.
+
+지금 업데이트된 내용을 커밋해줘.
+
+// 커뮤니케이션이나 문서화에 한국어를 사용하도록 규칙을 설정해줘.
+
+
+ 
+RealWorld 스펙(https://realworld-docs.netlify.app/implementation-creation/introduction/)을 바이브 코딩으로 구현하려고 해.
+기술 스택은 http://lucumr.pocoo.org/2025/6/12/agentic-coding/ 을 참고해서 작성해줘.
+다만, UI 구현은 Mantine UI를 사용하고 인프라는 AWS CDK, CI/CD 파이프라인은 깃허브 액션을 사용해줘.
+본격적인 요구사항을 작성하기에 앞서 요구사항 작성을 위해서 필요한 내용을 /docs/pre-prd.md에 문서화해줘.
+
+
+@docs/pre-prd.md와 http://lucumr.pocoo.org/2025/6/12/agentic-coding/ 를 기반으로 /docs/PRD를 작성해줘. 
