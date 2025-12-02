@@ -31,3 +31,10 @@ docs/tasks.md에 작성해줘.
 
 이 프로젝트는 바이브 코딩으로 단시간에 완성시키는 것을 목표로 하고 있어.
 일정 관련 내용은 삭제해줘.
+
+@README.md 를 업데이트해줘. 
+리얼월드 앱 스타터킷 https://github.com/gothinkster/realworld-starter-kit 에서 필요한 내용들을 가져와서 세팅하고 이 프로젝트의 목적 설명을 추가해줘.
+이 프로젝트는 리얼월드 앱 사양을 사용해서 바이브 코딩 기법 그리고 아르민 로나허의 추천 기술 스택을 사용해서 리얼월드앱을 구현하는 것을 목표로 하고 있어.
+
+@docs/PRD.md와 @README.md 그리고 https://realworld-docs.netlify.app/introduction/ 을 참고해서 디자인 문서를 생성해줘.
+디자인 문서에서 다이아그램이 필요한 경우는 mermaid를 사용해줘.
