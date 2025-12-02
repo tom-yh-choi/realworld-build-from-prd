@@ -1,0 +1,58 @@
+# golangci-lint configuration
+# https://golangci-lint.run/usage/configuration/
+
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+linters:
+  enable:
+    - errcheck       # Checks for unchecked errors
+    - gosimple       # Simplify code
+    - govet          # Reports suspicious constructs
+    - ineffassign    # Detects ineffectual assignments
+    - staticcheck    # Static analysis checks
+    - unused         # Checks for unused code
+    - gofmt          # Check code formatting
+    - goimports      # Check import order
+    - misspell       # Finds commonly misspelled English words
+    - bodyclose      # Checks whether HTTP response body is closed
+    - contextcheck   # Check context usage
+    - nilerr         # Finds returning nil after checking error
+    - exportloopref  # Check for pointers to loop variables
+    - gosec          # Security scanner
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+
+  govet:
+    enable-all: true
+
+  goimports:
+    local-prefixes: github.com/tom-yh-choi/realworld-build-from-prd/backend
+
+  misspell:
+    locale: US
+
+  gosec:
+    excludes:
+      - G104 # Audit errors not checked (we use errcheck for this)
+
+issues:
+  exclude-rules:
+    # Exclude some linters from running on tests files
+    - path: _test\.go
+      linters:
+        - gosec
+        - errcheck
+
+  max-issues-per-linter: 50
+  max-same-issues: 10
+
+output:
+  formats:
+    - format: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true

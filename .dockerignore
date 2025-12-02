@@ -1,0 +1,50 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# macOS
+.DS_Store
+
+# Project specific
+@prompt.txt
+.claude/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/*.log
+
+# Backend
+backend/bin/
+backend/tmp/
+backend/vendor/
+
+# Database
+*.db
+*.db-journal
+data/
+
+# Test & Coverage
+coverage/
+*.cover
+*.coverage
+
+# Docker
+.docker/
+
+# Temporary
+tmp/
+temp/
+*.tmp
