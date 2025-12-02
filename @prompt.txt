@@ -46,3 +46,15 @@ docs/tasks.md에 작성해줘.
 
 /commit
 
+/*** 구현시작 ***/
+
+
+Github issue #4에 git hook을 사용해서 lint, build, test 가 pre commit 시점에 동작할 수 있도록 husky를 사용해서 설정하는 내용을 추가해줘.
+
+@CLAUDE.md에 다음 내용을 추가해줘.
+- 백엔드와 코어로직 구현시에는 TDD로 구현할 것을 명시
+- SOLID 원칙과 Clean Architecture을 사용해서 구현할 것을 명시
+- 각 작업은 커밋 시점마다 완료된 것을 확인하고 이를 이슈에 인수조건으로써 확인할 수 있도록 커멘트를 남겨줘.
+위 내용은 영문으로 작성해서 추가해줘.
+
+/commit
