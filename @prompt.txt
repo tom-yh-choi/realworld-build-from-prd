@@ -121,3 +121,11 @@ claude-yolo --mcp-config ~/.claude.json
 github issue의 관련 티켓에도 버전과 참고할 문서들의 URL을 업데이트해줘.
 
 @CLAUDE.md 에 github 관련 작업은 cli를 사용하도록 명시적으로 적어줘.
+
+이슈 #4를 진행해줘. 티켓 내용 뿐만 아니라 @docs/PRD.md와 @docs/design.md 문서를 참고해서 진행해.
+
+// react compiler 설정 지시
+
+
+// 이슈를 다시 오픈했어.
+커밋하기 전에는 이슈를 닫지 않도록 @CLAUDE.md에 명시해줘.
