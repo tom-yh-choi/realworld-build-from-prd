@@ -113,3 +113,31 @@ Authorization: Token jwt.token.here
   - [x] Acceptance criteria item 1
   - [x] Acceptance criteria item 2
   ```
+
+### GitHub CLI 사용
+
+- 모든 GitHub 관련 작업은 `gh` CLI를 사용하여 수행
+- 주요 명령어:
+  ```bash
+  # 이슈 목록 조회
+  gh issue list
+
+  # 이슈 상세 조회
+  gh issue view <issue-number>
+
+  # 이슈 생성
+  gh issue create --title "제목" --body "내용"
+
+  # 이슈에 코멘트 추가
+  gh issue comment <issue-number> --body "코멘트 내용"
+
+  # 이슈 본문 수정
+  gh issue edit <issue-number> --body "수정된 내용"
+
+  # PR 생성
+  gh pr create --title "제목" --body "내용"
+
+  # PR 목록 조회
+  gh pr list
+  ```
+- MCP GitHub 도구 대신 `gh` CLI 사용을 우선시할 것
